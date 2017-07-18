@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="icon" type="image/gif" href="http://bit.ly/2thXahi" />
     <title>Admin Area</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" media="screen" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('css/admin.css')}}">
+
+    @yield('stylesheets')
+    
 </head>
 <body>
     @include('admin.layout.includes.header')
@@ -14,6 +18,8 @@
             <p>{{ Session::get('message') }}</p>
         </div>
         @endif
+
+        @include('admin.layout.pertials._message')
 
         <div class="row">
             @include('admin.layout.includes.sidenav')

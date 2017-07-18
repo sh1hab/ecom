@@ -21,9 +21,16 @@ Route::get('/', 'FrontController@index')->name('home');
 Route::get('/shirts', 'FrontController@shirts')->name('shirts');
 Route::get('/shirt', 'FrontController@shirts')->name('shirt');
 
-Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
-	Route::get('/',function(){
-		return view('admin.index');
-	} )->name('admin.index');
+// Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
-} );
+// 	// Route::get('/',function(){
+// 	// 	return view('admin.index');
+// 	// } )->name('admin.index');
+
+// 	// Route::get('/create',function(){
+// 	// 	return view('admin.products.create');
+// 	// });
+
+// } );
+
+Route::resource('admin','ProductController');

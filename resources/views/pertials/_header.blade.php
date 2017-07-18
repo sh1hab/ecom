@@ -12,6 +12,8 @@
 	<link rel="stylesheet" href="{{ asset('dist/css/app.css') }}"/>
 
 
-	@yield('stylesheets')
+	
+
+	
 
 </head>

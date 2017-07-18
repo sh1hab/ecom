@@ -1,17 +1,21 @@
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
-
-@include('pertials._header')
-
+<head>
+	@include('pertials._header')
+	
+	@yield('stylesheets')
+</head>
 <body>
-    @include('pertials._nav')
+	<div class="container">
+		@include('pertials._nav')
 
+		@include('pertials._message')
 
-    @yield('content')
+		@yield('content')
 
-    @include('pertials._footer')
+		@include('pertials._footer')
 
-    @include('pertials._scripts')
-
+		@include('pertials._scripts')
+	</div>
 </body>
 </html>

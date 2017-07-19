@@ -12,7 +12,8 @@
                     </a>
                     <!-- Sub menu -->
                     <ul>
-                        <li><a href="{{route('admin.index')}}">Add Product</a></li>
+                        <li><a href="">Products</a></li>
+                        <li><a href="/admin/create">Add Product</a></li>
                     </ul>
                 </li>
             </ul>

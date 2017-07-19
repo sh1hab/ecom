@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class products extends Model
 {
-    //
-
-    protected $fillable=[''];
+    
+//for mass assignment
+    protected $fillable=['name','descreption','size','price','category_id','image'];
 
     public function Category()
     {

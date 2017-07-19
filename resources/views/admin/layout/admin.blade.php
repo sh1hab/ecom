@@ -13,13 +13,6 @@
 <body>
     @include('admin.layout.includes.header')
     <div class="page-content">
-        @if(Session::has('message'))
-        <div class="alert alert-info">
-            <p>{{ Session::get('message') }}</p>
-        </div>
-        @endif
-
-        @include('admin.layout.pertials._message')
 
         <div class="row">
             @include('admin.layout.includes.sidenav')
@@ -27,6 +20,8 @@
                 <div class="row text-center">
                     <div class="col-md-10 col-md-offset-1">
                         <div class="content-box-large">
+                            @include('admin.layout.pertials._message')
+                            
                             @yield('content')
                         </div>
                     </div>

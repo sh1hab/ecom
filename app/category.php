@@ -8,11 +8,11 @@ class category extends Model
 {
     //
 
-    protected $fillable;
+    protected $fillable=['name'];
 
 
-    public function product()
+    public function products()
     {
-    	return  $this->hasMany('App\product');
+    	return  $this->hasMany('App\products');
     }
 }

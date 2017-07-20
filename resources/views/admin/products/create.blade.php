@@ -19,7 +19,7 @@
 	<div class="col-md-4 col-md-offset-4">
 		
 		<fieldset class="">
-			<form action="{{Route('admin.store')}}" method="POST" enctype="multipart/form-data">
+			<form action="{{Route('products.store')}}" method="POST" enctype="multipart/form-data">
 
 				{{csrf_field()}}
 				<legend class="">Add Products</legend>

@@ -21,12 +21,12 @@
 				</a>
 			</li>
 			<li>
-				<a href="#">
+				<a href="/cart">
 					<i class="fa fa-shopping-cart fa-2x" aria-hidden="true">
 					</i>
 					CART
 					<span class="alert badge">
-						8
+						{{Cart::count()}}
 					</span>
 				</a>
 			</li>

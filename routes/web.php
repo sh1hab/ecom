@@ -21,6 +21,8 @@ Route::get('/', 'FrontController@index')->name('home');
 Route::get('/shirts', 'FrontController@shirts')->name('shirts');
 Route::get('/shirt', 'FrontController@shirts')->name('shirt');
 
+Route::resource('/cart','CartController');
+
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
 	Route::get('/',function(){

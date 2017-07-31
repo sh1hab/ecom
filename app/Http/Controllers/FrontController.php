@@ -24,7 +24,8 @@ class FrontController extends Controller
 
     public function shirts()
     {
-        return view('shirts');
+        $tshirts=Products::all();
+        return view('shirts')->withTshirts($tshirts);
     }
 
     public function shirt()

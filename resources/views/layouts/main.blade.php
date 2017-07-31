@@ -16,6 +16,8 @@
 		@include('pertials._footer')
 
 		@include('pertials._scripts')
+
+		@yield('scripts')
 	</div>
 </body>
 </html>

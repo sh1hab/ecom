@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 use Session;
 use Auth;
 use App\Category;
@@ -18,8 +19,8 @@ class ProductController extends Controller
     
     public function index()
     {
-
-        return view('admin.index');
+        $products=Products::all();
+        return view('admin.products.index',compact('products'));
     }
 
     public function create()
@@ -69,18 +70,44 @@ class ProductController extends Controller
     
     public function edit($id)
     {
-        //
+        $product=products::find($id);
+        //$product=(array)$product;
+
+
+        $category=category::pluck('id','name');
+
+        return view('admin.products.edit')->withProduct($product)->withCategory($category);
     }
 
     
     public function update(Request $request, $id)
     {
-        //
+
+        $this->validate($request,array(
+            'name'=>'required',
+            'descreption'=>'required',
+
+            ));
+
+        $formInput=$request->except(['_method','_token','submit']);
+
+        products::whereId($id)->update($formInput);
+
+        Session::flash('success','Update Successful');
+
+        return redirect()->route('products.index');
+
     }
 
     
     public function destroy($id)
     {
-        //
+        $data=products::find($id);
+
+        products::whereId($id)->delete($data);
+
+        Session::flash('success','delete Successful');
+
+        return redirect()->route('products.index');
     }
 }

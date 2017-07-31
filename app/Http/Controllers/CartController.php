@@ -12,6 +12,7 @@ class CartController extends Controller
     public function index()
     {
         $carts=Cart::content();
+
         return view('cart.index')->withCarts($carts);
     }
 
@@ -39,9 +40,7 @@ class CartController extends Controller
 
         Cart::add($id,$product->name,1,$product->price,['size'=>$product->size]);
 
-        //return back();
-
-        return redirect()->route('cart.index');
+        return back();
     }
 
     

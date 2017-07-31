@@ -7,24 +7,31 @@
 		<table class="table table-responsive" style="margin-top: 30px">
 			<thead>
 				<tr>
-					
 					<th>Name</th>
 					<th>Price</th>
 					<th>Quantity</th>
 					<th>Size</th>
+					<th>Action</th>
 				</tr>
 			</thead>
+
+			@if( isset($carts) )
 			<tbody>
-				@forelse($carts as $cart)
+				@foreach($carts as $cart)
 				<tr>
 					
 					<td>{{$cart->name}}</td>
 					<td>$ {{$cart->price}}</td>
-					<td>
-						{!! Form::open(['route' => ['cart.update',$cart->rowId], 'method' => 'PUT']) !!}
 
-						<input type="integer" name="qty" value="{{$cart->qty}}">
-						<input type="submit" name="submit" value="ok" class="btn btn-default">
+					{!! Form::open(['route' => ['cart.update',$cart->rowId], 'method' => 'PUT']) !!}
+					<td>
+						<input type="integer" name="qty" value="{{$cart->qty}}" >
+					</td>
+					<td>
+						<input type="integer" name="size" value="{{$cart->size}}" >
+					</td>
+					<td>
+						<input type="submit" name="submit" value="ok" class="btn btn-primary">
 
 						{!!Form::close()!!}
 
@@ -35,24 +42,25 @@
 						{!!Form::close()!!}
 
 					</td>
-					<td>{{$cart->size}}</td>
+
 
 				</tr>
-				@empty
-				.....
-				@endforelse
-
+				@endforeach
 				<tr>
 					<td></td>
-					<td>Tax::{{ Cart::tax() }}
-						Subtotal::{{ Cart::subtotal() }}
-						<b>Total:::	</b>${{Cart::total()}}
+					<td>Tax::{{ Cart::tax() }}<br>
+						Subtotal::{{ Cart::subtotal() }}<br>
+						<b>Total:::	</b>${{Cart::total()}}<br>
 					</td>
 					<td>{{Cart::count()}}</td>
 				</tr>
+				
+			</tbody>	
 
-			</tbody>
+			@endif
+
 		</table>
+		<a href="/checkout"  class="btn btn-success">Checkout</a>
 	</div>
 </div>
 

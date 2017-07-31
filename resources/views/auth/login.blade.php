@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+
+<div
+class="fb-like"
+data-share="true"
+data-width="450"
+data-show-faces="true">
+</div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -17,9 +25,9 @@
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
 
                                 @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
                                 @endif
                             </div>
                         </div>
@@ -31,9 +39,9 @@
                                 <input id="password" type="password" class="form-control" name="password" required>
 
                                 @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
                                 @endif
                             </div>
                         </div>
@@ -59,10 +67,21 @@
                                 </a>
                             </div>
                         </div>
+                        
                     </form>
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-4">
+                            <a href="auth/facebook" class="btn btn-primary btn-block">
+                                Login with facebook
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection

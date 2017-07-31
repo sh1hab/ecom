@@ -179,6 +179,8 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Gloudemans\Shoppingcart\ShoppingcartServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        Nexmo\Laravel\NexmoServiceProvider::class
         ],
 
     /*
@@ -231,9 +233,9 @@ return [
 
     'Image' => Intervention\Image\Facades\Image::class,
     'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
-
     'Form' => Collective\Html\FormFacade::class,
-    'Html' => Collective\Html\HtmlFacade::class,
+    'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+    'Nexmo' => \Nexmo\Laravel\Facade\Nexmo::class
     ],
 
     ];

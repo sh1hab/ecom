@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('auth/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+
 Route::get('/', 'FrontController@index')->name('home');
 Route::get('/shirts', 'FrontController@shirts')->name('shirts');
 Route::get('/shirt', 'FrontController@shirts')->name('shirt');
@@ -35,10 +38,15 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
 	Route::resource('products','ProductController');
 	Route::resource('categories','CategoryController');
+	Route::resource('address','AddressController');
 
 } );
-
 
 Route::group(['middleware'=>'auth'],function(){
 
+	Route::get('/checkout','checkoutController@step1');
+	Route::get('shipping-info','checkoutController@shipping')->name('checkout.shipping');
+	Route::post('store-payment','checkoutController@storePayment')->name('payment.store');
 } );
+
+

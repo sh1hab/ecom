@@ -25,7 +25,7 @@
                 </h3>
             </a>
             <h5>
-                $19.99
+                $ {{ $tshirt->price }}
             </h5>
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin posuere sem enim, accumsan convallis risus semper.

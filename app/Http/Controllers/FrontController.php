@@ -17,15 +17,15 @@ class FrontController extends Controller
     {
         //$shirts=DB::table('products')->limit(4);
 
-        $shirts=Products::all();
+        $shirts=DB::table('products')->limit(4)->get();
 
-        return view('home')->withShirts($shirts);
+        return view('front.home')->withShirts($shirts);
     }
 
     public function shirts()
     {
         $tshirts=Products::all();
-        return view('shirts')->withTshirts($tshirts);
+        return view('front.shirts')->withTshirts($tshirts);
     }
 
     public function shirt()

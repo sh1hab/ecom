@@ -28,6 +28,18 @@
                     <li><a href="/admin/categories/create">Add</a></li>
                 </ul>
             </li>
+            <li class="submenu">
+                <a href="#">
+                    <i class="glyphicon glyphicon-list"></i> Orders
+                    <span class="caret pull-right"></span>
+                </a>
+                <!-- Sub menu -->
+                <ul>
+                    <li><a href="/admin/orders/delivered">Delivered</a></li>
+                    <li><a href="/admin/orders/pending">Pending</a></li>
+                    <li><a href="/admin/orders/">All</li>
+                </ul>
+            </li>
         </ul>
     </div>
 </div> <!-- ADMIN SIDE NAV-->

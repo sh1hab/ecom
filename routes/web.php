@@ -39,6 +39,9 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	Route::resource('products','ProductController');
 	Route::resource('categories','CategoryController');
 	Route::resource('address','AddressController');
+//optionla parameter ? 
+	Route::get('/orders/{type?}' , 'OrderController@showOrders');
+	Route::post('/toggle/{id}' ,   'OrderController@toggleOrders');
 
 } );
 

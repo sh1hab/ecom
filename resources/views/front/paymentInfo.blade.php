@@ -29,7 +29,7 @@
 				<span>Card</span>
 				<div id="card-element" class="field"></div>
 			</label>
-			<button type="submit">Pay ${{Cart::total()}}</button>
+			<button type="submit">Pay ${{ Cart::total() }}</button>
 			<div class="outcome">
 				<div class="error" role="alert"></div>
 				<div class="success">
